@@ -45,16 +45,16 @@ jobs:
         run: |
           mkdir -p assets
           openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out assets/server.key -base64 \
-          -K 3021D90EB9437B2D8F30E8363695C4418B5E5F1870801B5C317E9398EE0F572D \
-          -iv 0D74D3CF62AFC7AE3A1AC94A4685DF10
+          -K ${{ secrets.ENCRYPTION_KEY }} \
+          -iv ${{ secrets.ENCRYPTION_IV }}
 
       # Step 5: Authenticate with Salesforce using JWT
       - name: Authenticate to Target Org
         run: |
-          sfdx force:auth:jwt:grant --instanceurl https://login.salesforce.com \
-          --clientid 3MVG9k02hQhyUgQC4xhCBu1J_cVrYtO7Hw8LGbdFqOowkQ4mztw1rkTG1BdFnPlCMy1lhdQiYqvO9_QHMJZVY \
+          sfdx force:auth:jwt:grant --instanceurl ${{ secrets.INSTANCE_URL }} \
+          --clientid ${{ secrets.CLIENT_ID }} \
           --jwtkeyfile assets/server.key \
-          --username ajaywagh442@gmail.com \
+          --username ${{ secrets.SALESFORCE_USERNAME }} \
           --setalias TargetOrg   
 
       # Step 6: Deploy source code against Salesforce Org
