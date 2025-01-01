@@ -53,13 +53,7 @@ jobs:
           npm install -g @salesforce/cli
           sfdx force --help
 
-      # Step 5: Verify Salesforce CLI installation
-      - name: Verify Salesforce CLI installation
-        run: |
-          echo "Salesforce CLI location: $(which sfdx)"
-          echo "Salesforce CLI version: $(sfdx --version)"
-
-      # Step 6: Decrypt the server key
+      # Step 5: Decrypt the server key
       - name: Decrypt server key
         run: |
           mkdir -p assets
@@ -67,7 +61,7 @@ jobs:
           -K ${{ secrets.ENCRYPTION_KEY }} \
           -iv ${{ secrets.ENCRYPTION_IV }}
 
-      # Step 7: Authenticate with Salesforce using JWT
+      # Step 6: Authenticate with Salesforce using JWT
       - name: Authenticate to Target Org
         run: |
           sfdx force:auth:jwt:grant --instanceurl ${{ secrets.INSTANCE_URL }} \
@@ -76,7 +70,7 @@ jobs:
           --username ${{ secrets.SALESFORCE_USERNAME }} \
           --setalias TargetOrg   
 
-      # Step 8: Deploy source code against Salesforce Org
+      # Step 7: Deploy source code against Salesforce Org
       - name: Deploy Source Code Against Salesforce ORG
         run: |
           sf deploy metadata --source-dir force-app --target-org TargetOrg
