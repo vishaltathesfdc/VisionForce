@@ -47,33 +47,19 @@ jobs:
         run: |
           npm install --legacy-peer-deps
 
-      # Step 4: Debug Cache Key for Salesforce CLI
-      - name: Debug Cache Key
-        run: |
-          echo "Cache Key: ${{ runner.os }}-sfdx-${{ hashFiles('**/package.json') }}"
-
-      # Step 5: Cache Salesforce CLI (in ~/.npm-global)
-      - name: Cache Salesforce CLI
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm-global
-          key: ${{ runner.os }}-sfdx-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-sfdx-
-
-      # Step 6: Install the SFDX CLI (only if it’s not cached)
+      # Step 4: Install the SFDX CLI (no cache)
       - name: Install the SFDX CLI
         run: |
           npm install -g @salesforce/cli
           sfdx force --help
 
-      # Step 7: Verify Salesforce CLI installation
+      # Step 5: Verify Salesforce CLI installation
       - name: Verify Salesforce CLI installation
         run: |
           echo "Salesforce CLI location: $(which sfdx)"
           echo "Salesforce CLI version: $(sfdx --version)"
 
-      # Step 8: Decrypt the server key
+      # Step 6: Decrypt the server key
       - name: Decrypt server key
         run: |
           mkdir -p assets
@@ -81,7 +67,7 @@ jobs:
           -K ${{ secrets.ENCRYPTION_KEY }} \
           -iv ${{ secrets.ENCRYPTION_IV }}
 
-      # Step 9: Authenticate with Salesforce using JWT
+      # Step 7: Authenticate with Salesforce using JWT
       - name: Authenticate to Target Org
         run: |
           sfdx force:auth:jwt:grant --instanceurl ${{ secrets.INSTANCE_URL }} \
@@ -90,7 +76,7 @@ jobs:
           --username ${{ secrets.SALESFORCE_USERNAME }} \
           --setalias TargetOrg   
 
-      # Step 10: Deploy source code against Salesforce Org
+      # Step 8: Deploy source code against Salesforce Org
       - name: Deploy Source Code Against Salesforce ORG
         run: |
           sf deploy metadata --source-dir force-app --target-org TargetOrg
