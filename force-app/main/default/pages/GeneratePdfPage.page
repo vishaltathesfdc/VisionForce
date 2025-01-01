@@ -1,0 +1,56 @@
+<apex:page renderAs="pdf" id="pdfPage" controller="GeneratePdfController">
+    <html>
+        <head>
+            <style>
+                /* Spinner styles */
+                #spinner {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: none;
+                    border: 8px solid #f3f3f3; /* Light gray */
+                    border-top: 8px solid #3498db; /* Blue */
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    animation: spin 2s linear infinite;
+                }
+
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+
+            <script>
+                // Show spinner when the PDF rendering starts
+                function showSpinner() {
+                    document.getElementById('spinner').style.display = 'block';
+                }
+
+                // Hide spinner when the PDF rendering is complete
+                function hideSpinner() {
+                    document.getElementById('spinner').style.display = 'none';
+                }
+
+                // Attach event listeners to Visualforce page to detect when it's ready
+                window.onload = function() {
+                    showSpinner();
+
+                    // Check if the PDF generation is starting and ending
+                    document.getElementById('pdfPage').addEventListener('load', hideSpinner, false);
+                    // Optionally, use an event or timeout to detect when content is fully loaded
+                    setTimeout(hideSpinner, 3000); // Replace 3000 with your expected PDF generation time
+                };
+            </script>
+        </head>
+        <body>
+            <!-- Spinner element -->
+            <div id="spinner"></div>
+            
+            <h2>PDF Content</h2>
+            <p>This is the content that will appear in the PDF file.</p>
+        </body>
+    </html>
+</apex:page>

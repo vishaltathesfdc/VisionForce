@@ -1,0 +1,21 @@
+<apex:page controller="AccountController" renderAs="pdf" contentType="application/pdf" applyBodyTag="false" showHeader="false" standardStylesheets="false">
+    <apex:repeat value="{!accountList}" var="account">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Industry</th>
+                    <th>Annual Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{!account.Name}</td>
+                    <td>{!account.Industry}</td>
+                    <td>{!account.AnnualRevenue}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+    </apex:repeat>
+</apex:page>
