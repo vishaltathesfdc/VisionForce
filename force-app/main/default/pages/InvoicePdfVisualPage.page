@@ -1,0 +1,9 @@
+<apex:page controller="InvoicePdfPageController" applyHtmlTag="false" renderAs="pdf" readOnly="true" showHeader="false" cache="true">
+    
+    <html>
+        <head>
+            <meta http-equiv="Content-Type"/>
+        </head>
+        <apex:outputText value="{!pdfText}" escape="false"></apex:outputText>
+    </html>
+</apex:page>
