@@ -1,0 +1,7 @@
+.left-icon .slds-input{
+    padding-left:var(---lwc-varSpacingLarge,2rem)
+}
+
+.right-icon .slds-input{
+    padding-right:var(---lwc-varSpacingLarge,2rem)
+}

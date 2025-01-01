@@ -1,0 +1,50 @@
+<template>
+    <div class="container" style="background-color: #ffffff; padding: 1rem;">
+        <img src={logo} alt="Logo"/>
+
+        <div style="display: inline-block; float: right;">
+            <div>Invoice : {invoiceInfo.no}</div>
+            <div>Created : {invoiceInfo.no}</div>
+            <div>Due     : {invoiceInfo.no}</div>
+        </div>
+         <div style=" padding: 36px 0px 20px 0px;">
+            <div style="display: inline-block;">
+                <div>{invoiceInfo.name},</div>
+                <div>{invoiceInfo.street},</div>
+                <div>{invoiceInfo.city}</div>
+            </div>
+            <div style="display: inline-block; float: right;">
+                <div>{clientInfo.name}</div>
+                <div>{clientInfo.contact}</div>
+                <div>{clientInfo.email}</div>
+            </div>
+        </div>
+
+        <div style="background: darkgray; font-weight: bold; margin: 0px 0px 16px 0px; padding: 10px;">
+            <div style="display: inline-block;">Services</div>
+            <div style="display: inline-block; float:right;">Amount</div>
+        </div>
+        <template iterator:ser={services}>
+            <div key={ser.value.type}>
+                <div style="display: inline-block;">{ser.value.type}</div>
+                <div style="display: inline-block; float: right;">{ser.value.amount}</div>
+
+                <template if:true={ser.last}>
+                    <div style="margin-bottom: 20px;"><strong style="display: inline-block; float:right;">Total Amount : ₹ {totalAmount}</strong></div>
+                </template>
+            </div>
+            
+        </template>
+
+
+            
+
+      
+        
+       
+    </div>
+
+        <div>
+            <lightning-button label="Generate PDF" variant="brand" onclick={generatePdfHandler}></lightning-button>
+        </div>
+</template>
