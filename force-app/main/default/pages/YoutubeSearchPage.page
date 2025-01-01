@@ -1,0 +1,20 @@
+<apex:page controller="YoutubeController">
+    <div style="padding:30px;">
+        
+    
+    <apex:form >
+        <apex:inputText value="{!searchText}"/>
+        <apex:commandButton value="Search" action="{!SearchHandler}"/>
+    </apex:form>
+    <table>
+    <apex:repeat value="{!dataList}" var="rec">
+    <tr>
+     	<td>{!rec.title}</td>
+        <td>{!rec.description}</td>
+        <td>{!rec.publishTime}</td>
+        <td> <apex:image url="{!rec.url}" alt="Thumbnails" height="200"/> </td>
+     </tr>
+    </apex:repeat>
+        </table>
+        </div>
+</apex:page>
