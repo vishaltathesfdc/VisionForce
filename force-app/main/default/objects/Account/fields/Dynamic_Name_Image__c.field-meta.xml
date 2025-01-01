@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynamic_Name_Image__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(&apos;https://dummyimage.com/100x100/CCC4FF/563BFF&amp;text=&apos;+UPPER(LEFT(Name, 2))
+, UPPER(LEFT(Name, 2))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Dynamic Name Image</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

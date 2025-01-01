@@ -31,7 +31,7 @@ public class GeneratePdfController {
         
         if(acc.id !=null){
             textValue = JSON.serialize(acc);
-        }else textValue='Please enterr recId ';
+        }else textValue='Please enter recId ';
         
     }
 }
