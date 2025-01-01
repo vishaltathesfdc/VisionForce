@@ -2,10 +2,10 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
-  pull_request:    # Trigger on pull request events
-    types: [closed] # Only trigger when the PR is closed
+  pull_request:
+    types: [closed]
     branches:
-      - main        # Only trigger when the PR is merged into the 'main' branch
+      - main
 
 jobs:
   Explore-GitHub-Actions:
@@ -24,7 +24,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
   build:
-    if: github.event.pull_request.merged == true  # Only run when the PR is merged
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout the source code from the latest commit
@@ -33,18 +33,36 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Step 2: Install NPM dependencies with --legacy-peer-deps to handle conflicts
+      # Step 2: Cache NPM dependencies
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      # Step 3: Install NPM dependencies
       - name: Install NPM dependencies
         run: |
           npm install --legacy-peer-deps
 
-      # Step 3: Install the SFDX CLI
+      # Step 4: Cache Salesforce CLI
+      - name: Cache Salesforce CLI
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm-global
+          key: ${{ runner.os }}-sfdx-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-sfdx-
+
+      # Step 5: Install the SFDX CLI (only if it’s not cached)
       - name: Install the SFDX CLI
         run: |
           npm install -g @salesforce/cli
           sfdx force --help
 
-      # Step 4: Decrypt the server key
+      # Step 6: Decrypt the server key
       - name: Decrypt server key
         run: |
           mkdir -p assets
@@ -52,7 +70,7 @@ jobs:
           -K ${{ secrets.ENCRYPTION_KEY }} \
           -iv ${{ secrets.ENCRYPTION_IV }}
 
-      # Step 5: Authenticate with Salesforce using JWT
+      # Step 7: Authenticate with Salesforce using JWT
       - name: Authenticate to Target Org
         run: |
           sfdx force:auth:jwt:grant --instanceurl ${{ secrets.INSTANCE_URL }} \
@@ -61,7 +79,7 @@ jobs:
           --username ${{ secrets.SALESFORCE_USERNAME }} \
           --setalias TargetOrg   
 
-      # Step 6: Deploy source code against Salesforce Org
+      # Step 8: Deploy source code against Salesforce Org
       - name: Deploy Source Code Against Salesforce ORG
         run: |
           sf deploy metadata --source-dir force-app --target-org TargetOrg
