@@ -1,0 +1,72 @@
+<apex:page contenttype="application/msword">
+    <html xmlns:w="urn:schemas-microsoft-com:office:word">
+        <head>
+            <style type="text/css">
+                @page {
+                    size: 8.5in 11in;
+                    margin: 1in;
+                }
+
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    height: 100%;
+                    page-break-before: auto;
+                }
+
+                /* Ensure content area takes space and leaves room for footer */
+                .content {
+                    padding: 20px;
+                    margin-bottom: 60px; /* Adjusted bottom margin to give space for footer */
+                }
+
+                /* Footer Style */
+                .footer {
+                    text-align: center;
+                    font-size: 10pt;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-top: 1px solid #000;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #f2f2f2; /* Optional background */
+                }
+
+                /* Table structure for page content */
+                table {
+                    width: 100%;
+                    table-layout: fixed;
+                }
+
+                .footer-cell {
+                    padding: 5px;
+                    text-align: center;
+                    font-size: 10pt;
+                    vertical-align: middle;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Main Content Section -->
+            <div class="content">
+                <h1>Content of the Word Document</h1>
+                <p>This is the content of the Word document.</p>
+                <p>You can add more content here.</p>
+                <p>This is some more content in the document.</p>
+                <p>Try adding additional content to verify the footer positioning.</p>
+            </div>
+
+            <!-- Footer Section -->
+            <table>
+                <tr>
+                    <td class="footer-cell">
+                        Page Footer | Generated on {!TODAY()}
+                    </td>
+                </tr>
+            </table>
+        </body>
+    </html>
+</apex:page>
