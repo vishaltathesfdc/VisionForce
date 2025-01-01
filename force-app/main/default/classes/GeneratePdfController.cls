@@ -10,7 +10,7 @@ public class GeneratePdfController {
         }
 
         Account acc = [
-            SELECT Id, IsDeleted, MasterRecordId, Name, Type, RecordTypeId, ParentId, 
+            SELECT Id, IsDeleted, MasterRecordId, Name, Type, ParentId, 
                    BillingStreet, BillingCity, BillingState, BillingPostalCode, 
                    BillingCountry, BillingLatitude, BillingLongitude, 
                    BillingGeocodeAccuracy, BillingAddress, ShippingStreet, 
@@ -23,12 +23,7 @@ public class GeneratePdfController {
                    LastActivityDate, LastViewedDate, LastReferencedDate, Jigsaw, 
                    JigsawCompanyId, CleanStatus, AccountSource, DunsNumber, 
                    Tradestyle, NaicsCode, NaicsDesc, YearStarted, SicDesc, 
-                   DandbCompanyId, OperatingHoursId, CustomerPriority__c, SLA__c, 
-                   Active__c, NumberofLocations__c, UpsellOpportunity__c, 
-                   SLASerialNumber__c, SLAExpirationDate__c, Contact_Count__c, 
-                   Count__c, Contact__c, Email__c, Country__c, State__c, City__c, 
-                   Bar_Code__c, Dynamic_Name_Image__c, Url__c, Contact_Limit__c, 
-                   Remote_Url__c
+                   DandbCompanyId, OperatingHoursId
             FROM Account
             WHERE Id = :recordId
             LIMIT 1
