@@ -1,1 +1,63 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
+on: 
+  push:
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the source code from the latest commit
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # Step 2: Install NPM dependencies with --legacy-peer-deps to handle conflicts
+      - name: Install NPM dependencies
+        run: |
+          npm install --legacy-peer-deps
+
+      # Step 3: Install the SFDX CLI
+      - name: Install the SFDX CLI
+        run: |
+          npm install -g @salesforce/cli
+          sfdx force --help
+
+      # Step 4: Decrypt the server key
+      - name: Decrypt server key
+        run: |
+          mkdir -p assets
+          openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out assets/server.key -base64 \
+          -K 3021D90EB9437B2D8F30E8363695C4418B5E5F1870801B5C317E9398EE0F572D \
+          -iv 0D74D3CF62AFC7AE3A1AC94A4685DF10
+
+      # Step 5: Authenticate with Salesforce using JWT
+      - name: Authenticate to Target Org
+        run: |
+          sfdx force:auth:jwt:grant --instanceurl https://login.salesforce.com \
+          --clientid 3MVG9k02hQhyUgQC4xhCBu1J_cVrYtO7Hw8LGbdFqOowkQ4mztw1rkTG1BdFnPlCMy1lhdQiYqvO9_QHMJZVY \
+          --jwtkeyfile assets/server.key \
+          --username ajaywagh442@gmail.com \
+          --setalias TargetOrg   
+
+      # Step 6: Deploy source code against Salesforce Org
+      - name: Deploy Source Code Against Salesforce ORG
+        run: |
+          sf deploy metadata --source-dir force-app --target-org TargetOrg
