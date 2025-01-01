@@ -1,0 +1,37 @@
+<template>
+  <lightning-card>
+    <div class="slds-m-around_medium">
+      <div class="slds-is-relative">
+        <lightning-icon
+          size="x-small"
+          icon-name="utility:email"
+          alternative-text="Email"
+          title="Email"
+          class="main-icon left-icon"
+        ></lightning-icon>
+        <lightning-input
+          type="text"
+          label="Email"
+          class="left-icon"
+        ></lightning-input>
+      </div>
+
+      <div class="slds-is-relative">
+        <lightning-icon
+          size="x-small"
+          style="cursor: pointer"
+          icon-name={passFieldIcon}
+          alternative-text="Password"
+          title="Password"
+          class="main-icon right-icon"
+          onclick={handleIcon}
+        ></lightning-icon>
+        <lightning-input
+          type={passFieldType}
+          label="Password"
+          class="right-icon"
+        ></lightning-input>
+      </div>
+    </div>
+  </lightning-card>
+</template>

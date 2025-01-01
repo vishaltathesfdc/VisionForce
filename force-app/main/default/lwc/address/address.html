@@ -1,0 +1,32 @@
+<template>
+    <lightning-card label="Address" title="Address">
+
+
+        <div class="slds-p-around_large" style="display:flex; justify-content: space-between;">
+
+                  <lightning-combobox name="Country"
+                    label="Country"
+                    placeholder="Select Country"
+                    options={countryOptions}
+                    onchange={handleCountryChange}>
+                    </lightning-combobox>
+
+                    
+                    <lightning-combobox name="State"
+                    label="State"
+                    placeholder="Select State"
+                    options={stateOptions}
+                    onchange={handleStateChange}>
+                    </lightning-combobox>
+
+                    <lightning-combobox name="City"
+                    label="City"
+                    placeholder="Select City"
+                    options={cityOptions}>
+                    </lightning-combobox>
+
+
+        </div>
+
+    </lightning-card>
+</template>

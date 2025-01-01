@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>City__c</fullName>
+    <label>City</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>State__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pune</fullName>
+                <default>false</default>
+                <label>Pune</label>
+            </value>
+            <value>
+                <fullName>Chhatrapati Sambhajinagar</fullName>
+                <default>false</default>
+                <label>Chhatrapati Sambhajinagar</label>
+            </value>
+            <value>
+                <fullName>Mumbai</fullName>
+                <default>false</default>
+                <label>Mumbai</label>
+            </value>
+            <value>
+                <fullName>Jaipur</fullName>
+                <default>false</default>
+                <label>Jaipur</label>
+            </value>
+            <value>
+                <fullName>Ajmer</fullName>
+                <default>false</default>
+                <label>Ajmer</label>
+            </value>
+            <value>
+                <fullName>Amaravati</fullName>
+                <default>false</default>
+                <label>Amaravati</label>
+            </value>
+            <value>
+                <fullName>Guntur</fullName>
+                <default>false</default>
+                <label>Guntur</label>
+            </value>
+            <value>
+                <fullName>Karachi</fullName>
+                <default>false</default>
+                <label>Karachi</label>
+            </value>
+            <value>
+                <fullName>Kairpur</fullName>
+                <default>false</default>
+                <label>Kairpur</label>
+            </value>
+            <value>
+                <fullName>Lahore</fullName>
+                <default>false</default>
+                <label>Lahore</label>
+            </value>
+            <value>
+                <fullName>Islamabad</fullName>
+                <default>false</default>
+                <label>Islamabad</label>
+            </value>
+            <value>
+                <fullName>Los Angeles</fullName>
+                <default>false</default>
+                <label>Los Angeles</label>
+            </value>
+            <value>
+                <fullName>California City</fullName>
+                <default>false</default>
+                <label>California City</label>
+            </value>
+            <value>
+                <fullName>Homer</fullName>
+                <default>false</default>
+                <label>Homer</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Maharastra</controllingFieldValue>
+            <valueName>Pune</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Maharastra</controllingFieldValue>
+            <valueName>Chhatrapati Sambhajinagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Maharastra</controllingFieldValue>
+            <valueName>Mumbai</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rajstan</controllingFieldValue>
+            <valueName>Jaipur</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rajstan</controllingFieldValue>
+            <valueName>Ajmer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Andhra Pradesh</controllingFieldValue>
+            <valueName>Amaravati</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Andhra Pradesh</controllingFieldValue>
+            <valueName>Guntur</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alaska</controllingFieldValue>
+            <valueName>Homer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>Los Angeles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>California City</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sindh</controllingFieldValue>
+            <valueName>Karachi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sindh</controllingFieldValue>
+            <valueName>Kairpur</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Punjab</controllingFieldValue>
+            <valueName>Lahore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Punjab</controllingFieldValue>
+            <valueName>Islamabad</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

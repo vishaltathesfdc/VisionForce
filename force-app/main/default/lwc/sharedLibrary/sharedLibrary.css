@@ -1,0 +1,294 @@
+:host {
+
+    /* Colors: */
+    --main-color-primary: #008BA7;
+    --main-color-primary4D: #008BA74D;
+    --main-color-primaryDark: #193A5A;
+    --main-color-primaryDarker: #036477;
+    --main-color-secondaryLight: #FF9F37;
+    --main-color-secondaryDark: #D77E0E;
+    --main-color-tertiary: #7E964E;
+    --main-color-tertiaryLight: #6E981B;
+    --main-color-lightGrey: #DEE2E6;
+    --main-color-mediumGrey: #C6C6C6;
+    --main-color-backgroundColor: #F5F7F4;
+    --main-color-darkBlue: #343A40;
+    --main-color-black: #000000;
+    --main-color-white: #FFFFFF;
+    --main-color-white4D: #FFFFFF4D;
+    --main-color-darkGrey: #5F5F5F;
+    --main-color-offGrey :#707070;
+    --main-color-shadow :#00000026;
+    
+    --main-top-spacing: 124px;
+    
+    
+    
+    
+    /* Font/text values */
+    --main-font-family-ibm-plex-sans: IBM Plex Sans;
+    --main-font-family-playfair-display: Playfair Display;
+    --main-font-style-normal: normal;
+    --main-font-weight-800: 800px;
+    --main-font-weight-900: 900px;
+    --main-font-weight-normal: normal;
+    --main-font-weight-bold: bold;
+    --main-font-weight-medium: medium;
+    --main-font-size-12: 12px;
+    --main-font-size-14: 14px;
+    --main-font-size-16: 16px;
+    --main-font-size-18: 18px;
+    --main-font-size-20: 20px;
+    --main-font-size-22: 22px;
+    --main-font-size-25: 25px;
+    --main-font-size-28: 28px;
+    --main-font-size-30: 30px;
+    --main-font-size-32: 32px;
+    --main-font-size-40: 40px;
+    --main-font-size-45: 45px;
+    --main-font-size-60: 60px;
+    --main-character-spacing-0: 0px;
+    --main-line-spacing-16: 16px;
+    --main-line-spacing-18: 18px;
+    --main-line-spacing-20: 20px;
+    --main-line-spacing-23: 23px;
+    --main-line-spacing-24: 24px;
+    --main-line-spacing-26: 26px;
+    --main-line-spacing-28: 28px;
+    --main-line-spacing-29: 29px;
+    --main-line-spacing-32: 32px;
+    --main-line-spacing-34: 34px;
+    --main-line-spacing-36: 36px;
+    --main-line-spacing-40: 40px;
+    --main-line-spacing-52: 52px;
+    --main-line-spacing-55: 55px;
+    --main-line-spacing-76: 76px;
+    --main-text-transform-uppercase: uppercase;
+    
+    /* Custom */
+    
+    }
+    
+    
+    /* Mobile */
+    .h4-—-20pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-normal);
+    font-size: var(--main-font-size-20);
+    line-height: var(--main-line-spacing-28);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-darkBlue);
+    }
+    
+    .h3-—-22pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-900);
+    font-size: var(--main-font-size-22);
+    line-height: var(--main-line-spacing-29);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    
+    .h2-—-25pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-900);
+    font-size: var(--main-font-size-25);
+    line-height: var(--main-line-spacing-32);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    
+    .h1-—-32pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-900);
+    font-size: var(--main-font-size-32);
+    line-height: var(--main-line-spacing-36);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    
+    /* Tablet */
+    .h4-—-20pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-bold);
+    font-size: var(--main-font-size-20);
+    line-height: var(--main-line-spacing-26);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    
+    .h3-—-28pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-900);
+    font-size: var(--main-font-size-28);
+    line-height: var(--main-line-spacing-36);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    
+    .h2-—-32pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-900);
+    font-size: var(--main-font-size-32);
+    line-height: var(--main-line-spacing-40);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    
+    .h1-—-45pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-900);
+    font-size: var(--main-font-size-45);
+    line-height: var(--main-line-spacing-55);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    
+    /* Desktop */
+    .h4-—-22pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-bold);
+    font-size: var(--main-font-size-22);
+    line-height: var(--main-line-spacing-28);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    .h3-—-30pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-bold);
+    font-size: var(--main-font-size-30);
+    line-height: var(--main-line-spacing-34);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    .h2-—-40pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-800);
+    font-size: var(--main-font-size-40);
+    line-height: var(--main-line-spacing-52);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    .h1—-60pt {
+    font-family: var(--main-font-family-playfair-display);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-900);
+    font-size: var(--main-font-size-60);
+    line-height: var(--main-line-spacing-76);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    
+    /*Mobile/Tablet/Desktop */
+    .button-large-—-18pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-medium);
+    font-size: var(--main-font-size-18);
+    line-height: var(--main-line-spacing-23);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-white);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    .button-small-—-14pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-medium);
+    font-size: var(--main-font-size-14);
+    line-height: var(--main-line-spacing-18);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-white);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    .text-small-—-12pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-normal);
+    font-size: var(--main-font-size-12);
+    line-height: var(--main-line-spacing-16);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    .text-reg-—-16pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-normal);
+    font-size: var(--main-font-size-16);
+    line-height: var(--main-line-spacing-20);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-darkBlue);
+    }
+    .text-l-—-18pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-normal);
+    font-size: var(--main-font-size-18);
+    line-height: var(--main-line-spacing-24);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-black);
+    }
+    .text-xl-—-22pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-normal);
+    font-size: var(--main-font-size-22);
+    line-height: var(--main-line-spacing-32);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-darkBlue);
+    }
+    .h5-—-20pt {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-normal);
+    font-size: var(--main-font-size-20);
+    line-height: var(--main-line-spacing-24);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-darkBlue);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    
+    /* Custom */
+    .button-small-—-14pt-nocolor {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-medium);
+    font-size: var(--main-font-size-14);
+    line-height: var(--main-line-spacing-18);
+    letter-spacing: var(--main-character-spacing-0);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    
+    .button-large-—-18pt-nocolor {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-medium);
+    font-size: var(--main-font-size-18);
+    line-height: var(--main-line-spacing-23);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-white);
+    text-transform: var(--main-text-transform-uppercase);
+    }
+    
+    .text-reg-—-16pt-weight-medium {
+    font-family: var(--main-font-family-ibm-plex-sans);
+    font-style: var(--main-font-style-normal);
+    font-weight: var(--main-font-weight-medium);
+    font-size: var(--main-font-size-16);
+    line-height: var(--main-line-spacing-20);
+    letter-spacing: var(--main-character-spacing-0);
+    color: var(--main-color-darkBlue);
+    }
