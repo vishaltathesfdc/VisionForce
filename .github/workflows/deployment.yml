@@ -33,7 +33,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Step 2: Cache NPM dependencies
+      # Step 2: Cache NPM dependencies (node_modules)
       - name: Cache NPM dependencies
         uses: actions/cache@v3
         with:
@@ -47,7 +47,7 @@ jobs:
         run: |
           npm install --legacy-peer-deps
 
-      # Step 4: Cache Salesforce CLI
+      # Step 4: Cache Salesforce CLI (in ~/.npm-global)
       - name: Cache Salesforce CLI
         uses: actions/cache@v3
         with:
