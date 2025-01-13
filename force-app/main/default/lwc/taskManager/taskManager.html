@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Task Manager">
+        <div class="task-list">
+
+            <!-- Check if tasks exist -->
+            <template if:true={tasks}>
+                <!-- Loop through tasks -->
+                <template for:each={tasks} for:item="task">
+                    <div key={task.Id} class="task-item">
+                        <h3>{task.Subject__c}</h3> <!-- Corrected 'subject__c' to 'Subject__c' for standard naming -->
+                        <p>Deadline: {task.DueDateTime__c}</p>
+
+                        <p>
+                            <strong>
+                                <!-- Check if the task is expired -->
+                                <template if:true={task.isExpired}>Expired</template>
+                                <template if:false={task.isExpired}>
+                                    Time Remaining: {task.remaingTime} <!-- Fixed typo in "Time Remaing" -->
+                                </template>
+                            </strong>
+                        </p>
+                    </div>
+                </template>
+            </template>
+
+            <!-- Fallback if no tasks -->
+            <template if:false={tasks}>
+                <p>No Upcoming Tasks</p> <!-- Capitalized for consistency -->
+            </template>
+        </div>
+    </lightning-card>
+</template>
